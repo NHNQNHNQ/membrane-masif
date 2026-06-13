@@ -1,0 +1,169 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# macOS / editor metadata
+.DS_Store
+._*
+*~
+*.swp
+*.swo
+
+# Local environments
+.env
+.venv/
+venv/
+env/.membrane-masif.no-prefix.yml
+
+# Logs and temporary workspaces
+*.log
+nohup.out
+HANDOFF_NEXT_SESSION.md
+tmp/
+temp/
+workdir/
+scratch/
+match_results*.csv
+
+# Generated manuscript and analysis outputs
+result/
+results/
+outputs/
+figures/
+tables/
+plots/
+reports/
+
+# Large molecular / simulation / visualization artifacts
+*.pse
+*.psw
+*.xtc
+*.trr
+*.tpr
+*.edr
+*.cpt
+*.gro
+*.ndx
+*.dcd
+*.nc
+*.h5
+*.hdf5
+
+# Model checkpoints and generated archives
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Generated images are kept out of the code repository by default.
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.pdf
+
+# External local binaries should be installed by users, not committed.
+bin/
+
+# Internal planning notes and local-path manuscript scripts are kept out of the
+# public release until their inputs are available in the data archive.
+docs/superpowers/
+scripts/_*.py
+scripts/analyze_tpp_a71.py
+scripts/batch_generate_peptide_ply.sh
+scripts/build_v3_split.py
+scripts/build_v14_top2_fig3_and_screening.py
+scripts/compute_mechanism_fingerprint.py
+scripts/compute_membrane_perturbation.py
+scripts/extract_mode_membrane_ply.sh
+scripts/extract_train_features.py
+scripts/plot_*.py
+scripts/render_*.py
+scripts/rescore_*.py
+scripts/run_all_*.sh
+scripts/run_replace71_surface_after_folding.sh
+scripts/run_v10_scramble_surface_after_folding.sh
+scripts/score_candidates.py
+scripts/select_*.py
+scripts/train_eval_v3.py
+scripts/train_ply_weights.py
+scripts/v*_*.py
+# a4 / USER002 / MIC-calibrated internal scoring scripts: contain local machine
+# paths and unpublished wet-lab calibration. Documented but not in the first
+# public snapshot.
+scripts/prepare_a4_*.py
+scripts/score_a4_*.py
+scripts/make_mem_windows_bundle.sh
+!scripts/activate_pipeline.sh
+!scripts/add_masif_ddc_to_ply.py
+!scripts/build_mem_one_result.sh
+!scripts/build_mem_shape_index_ply.py
+!scripts/check_env.py
+!scripts/create_env_mamba.sh
+!scripts/export_feature_pse.sh
+!scripts/export_mem_view_pse.sh
+!scripts/export_ply_colored_pse.sh
+!scripts/generate_membrane_ply.sh
+!scripts/generate_peptide_ply.sh
+!scripts/make_pymol_bundle.sh
+!scripts/pdb_cleaner.py
+!scripts/ply_based_matcher_test.py
+!scripts/rebuild_continuous_charge.py
+!scripts/rebuild_mem_feature_maps.py
+!scripts/remove_ply_islands.py
+!scripts/reorder_ply_to_pymesh.py
+!scripts/run_full_pipeline.sh
+!scripts/run_mem_test.sh
+!scripts/run_preprocess_ligand_only.sh
+!scripts/validate_ply_charge.py
+!scripts/verify_env.py
+!scripts/visualize_ply.py
+
+# Pep71 exploratory scripts with local HPC paths are documented but not shipped
+# in the first public code snapshot.
+pep71_case_study/*.py
+pep71_case_study/*.sh
+pep71_case_study/*.csv
+pep71_case_study/*.xlsx
+pep71_case_study/*.json
+pep71_case_study/*.md
+pep71_case_study/old_amp_designer_plys/
+pep71_case_study/surface_match/
+!pep71_case_study/README.md
+!pep71_case_study/inputs/
+!pep71_case_study/inputs/*.pdb
+
+# Large bundled template lists are better distributed with the data archive.
+masif-neosurf-runpro/masif_seed_search/data/masif_targets/targets/template/lists/all_beta.txt
+masif-neosurf-runpro/masif_seed_search/data/masif_targets/targets/template/lists/all_beta_frags.list
+
+# MaSIF generated data directories
+masif-neosurf-runpro/output/
+masif-neosurf-runpro/data_preparation/00-raw_pdbs/
+masif-neosurf-runpro/data_preparation/01-benchmark_pdbs/
+masif-neosurf-runpro/data_preparation/01-benchmark_surfaces/
+masif-neosurf-runpro/data_preparation/tmp/
+
+# Keep source documentation and small examples trackable.
+!README.md
+!DATA_AVAILABILITY.md
+!PUBLICATION_CHECKLIST.md
+!CITATION.cff
+!LICENSE
+!docs/**/*.md
+!pep71_case_study/README.md
+!masif-neosurf-runpro/**/*.md
+!masif-neosurf-runpro/**/*.bib
+!masif-neosurf-runpro/**/LICENSE

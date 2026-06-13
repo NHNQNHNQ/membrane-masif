@@ -1,0 +1,67 @@
+# membrane-masif analysis env (osx-arm64, Apple Silicon)
+#
+# Purpose: 分析用环境，覆盖三个目标
+#   (1) membrane-masif-4.1 PLY 加载、特征统计、ply_based_matcher_test 打分
+#   (2) Pepdiffusion-26.3.19 训练/采样 (PyTorch + PyG)
+#   (3) MD 轨迹分析: GROMACS gmx + MDAnalysis + mdtraj + LiPyphilic
+#
+# 注：
+#   - 原 env/membrane-masif.yml 是 Linux x86_64 + Python 3.6 + TF1.x 的运行时快照，
+#     不能在 osx-arm64 重建，也不需要——descriptor-based MaSIF NN 路径不在分析需求里。
+#   - PLY 重生成 (MSMS+APBS+pdb2pqr+pymesh) 不放进来——tu/tu2 已有可用 PLY。
+#   - PyG 走 pip：conda-forge 的 pytorch_geometric 太旧 (2.0)，pyg channel 与
+#     conda-forge 混合解析常死循环。pip wheel 在 osx-arm64 上有一等公民支持。
+name: membrane-masif
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - pip
+
+  # ---- core scientific ----
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - networkx
+  - tqdm
+  - h5py
+
+  # ---- plotting / notebooks ----
+  - matplotlib-base
+  - seaborn
+  - jupyterlab
+  - ipython
+  - ipywidgets
+
+  # ---- cheminformatics ----
+  - rdkit
+  - openbabel
+  - biopython
+
+  # ---- MD trajectory analysis ----
+  # lipyphilic conda-forge noarch 包错装了 linux x86_64 .so——改 pip 拉原生 wheel。
+  - gromacs
+  - mdanalysis
+  - mdtraj
+
+  # ---- mesh / PLY handling ----
+  # open3d 暂不装：与 conda 的 libembree4 有 TBB ABI 冲突；trimesh+plyfile 已覆盖分析需求。
+  - trimesh
+  - plyfile
+  - meshio
+
+  # ---- visualization ----
+  - pymol-open-source
+  - nglview
+
+  # ---- deep learning core (conda-forge native arm64) ----
+  - pytorch
+
+  - pip:
+      # PyG 系列走 pip wheel（osx-arm64 cpu 通过纯 Python 实现）
+      - torch_geometric
+      # lipyphilic 走 pip 才能拿到原生 osx-arm64 wheel
+      - lipyphilic
+      - pdb-tools

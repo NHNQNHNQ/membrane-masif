@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use Membrane-MaSIF, please cite the accompanying manuscript and this software release."
+title: "Membrane-MaSIF"
+type: software
+authors:
+  - family-names: "TBD"
+    given-names: "TBD"
+repository-code: "https://github.com/NHNQNHNQ/membrane-masif"
+abstract: "Workflow for membrane and peptide molecular surface generation, feature reconstruction, and membrane-peptide surface matching analysis."
+license: "MIT"
+version: "0.1.0"
+date-released: "2026-06-05"
+keywords:
+  - antimicrobial peptides
+  - membrane surface
+  - MaSIF
+  - molecular surface
+  - peptide design
