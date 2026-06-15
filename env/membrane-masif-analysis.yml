@@ -6,8 +6,8 @@
 #   (3) MD 轨迹分析: GROMACS gmx + MDAnalysis + mdtraj + LiPyphilic
 #
 # 注：
-#   - 原 env/membrane-masif.yml 是 Linux x86_64 + Python 3.6 + TF1.x 的运行时快照，
-#     不能在 osx-arm64 重建，也不需要——descriptor-based MaSIF NN 路径不在分析需求里。
+#   - 旧的 Linux x86_64 + Python 3.6 + TF1.x MaSIF 运行时不在此 env 重建，也不需要——
+#     descriptor-based MaSIF NN 路径不在分析需求里。
 #   - PLY 重生成 (MSMS+APBS+pdb2pqr+pymesh) 不放进来——tu/tu2 已有可用 PLY。
 #   - PyG 走 pip：conda-forge 的 pytorch_geometric 太旧 (2.0)，pyg channel 与
 #     conda-forge 混合解析常死循环。pip wheel 在 osx-arm64 上有一等公民支持。

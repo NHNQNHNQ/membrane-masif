@@ -2,7 +2,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-PLUGIN="${PLUGIN:-$ROOT/masif-neosurf-runpro/masif_pymol_plugin.py}"
+PLUGIN="${PLUGIN:-$ROOT/surface_preprocessing/masif_pymol_plugin.py}"
 if [[ -z "${PYMOL_BIN:-}" ]]; then
   if command -v pymol >/dev/null 2>&1; then
     PYMOL_BIN="$(command -v pymol)"

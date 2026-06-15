@@ -2,7 +2,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-PLUGIN="${PLUGIN:-$ROOT/masif-neosurf-runpro/masif_pymol_plugin.py}"
+PLUGIN="${PLUGIN:-$ROOT/surface_preprocessing/masif_pymol_plugin.py}"
 
 PLY=""
 OUTDIR=""

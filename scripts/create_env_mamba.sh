@@ -2,7 +2,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-YML="$ROOT/env/membrane-masif.yml"
+YML="$ROOT/env/membrane-masif-analysis.yml"
 TMP_YML="$ROOT/env/.membrane-masif.no-prefix.yml"
 ENV_NAME="${ENV_NAME:-membrane-masif}"
 export YML TMP_YML

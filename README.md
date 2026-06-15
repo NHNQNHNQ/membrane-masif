@@ -25,11 +25,9 @@ This is one of two code repositories for the accompanying manuscript:
 
 - `scripts/`: command-line utilities for preprocessing, PLY cleanup, scoring,
   figure generation, and environment checks.
-- `env/`: conda environment files for the original Linux MaSIF runtime and the
-  newer analysis environment.
-- `masif-neosurf-runpro/`: bundled MaSIF/Neosurf runner used by the preprocessing
-  workflow.
-- `pep71_case_study/`: Pep71 membrane-bound conformer analysis scripts and notes.
+- `env/`: conda environment file for the analysis environment.
+- `surface_preprocessing/`: trimmed MaSIF surface-generation code (Apache-2.0)
+  that turns a structure into a PLY molecular surface.
 - `docs/`: method notes and implementation plans retained for transparency.
 
 Generated outputs should be written to `result/`, `workdir/`, or another path
@@ -150,11 +148,11 @@ bash scripts/run_full_pipeline.sh \
 
 If you use this repository, please cite the accompanying manuscript and the
 software dependencies listed in `CITATION.cff` and
-`masif-neosurf-runpro/citation.bib`.
+`surface_preprocessing/citation.bib`.
 
 ## License
 
 This project's original code is released under the [MIT License](LICENSE). The
-bundled MaSIF/Neosurf components in `masif-neosurf-runpro/` retain their original
-licenses (Apache-2.0 for MaSIF) and citation requirements, which take precedence
-for those files.
+trimmed MaSIF surface-generation code in `surface_preprocessing/` retains its
+original Apache-2.0 license and citation requirements, which take precedence for
+those files.

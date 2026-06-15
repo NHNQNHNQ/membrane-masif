@@ -131,39 +131,20 @@ scripts/make_mem_windows_bundle.sh
 !scripts/verify_env.py
 !scripts/visualize_ply.py
 
-# Pep71 exploratory scripts with local HPC paths are documented but not shipped
-# in the first public code snapshot.
-pep71_case_study/*.py
-pep71_case_study/*.sh
-pep71_case_study/*.csv
-pep71_case_study/*.xlsx
-pep71_case_study/*.json
-pep71_case_study/*.md
-pep71_case_study/old_amp_designer_plys/
-pep71_case_study/surface_match/
-!pep71_case_study/README.md
-!pep71_case_study/inputs/
-!pep71_case_study/inputs/*.pdb
+# Internal Pep71 case-study scripts and data: kept locally, never published.
+pep71_case_study/
 
-# Large bundled template lists are better distributed with the data archive.
-masif-neosurf-runpro/masif_seed_search/data/masif_targets/targets/template/lists/all_beta.txt
-masif-neosurf-runpro/masif_seed_search/data/masif_targets/targets/template/lists/all_beta_frags.list
+# Surface-preprocessing generated output directories
+surface_preprocessing/output/
+surface_preprocessing/data_preparation/
 
-# MaSIF generated data directories
-masif-neosurf-runpro/output/
-masif-neosurf-runpro/data_preparation/00-raw_pdbs/
-masif-neosurf-runpro/data_preparation/01-benchmark_pdbs/
-masif-neosurf-runpro/data_preparation/01-benchmark_surfaces/
-masif-neosurf-runpro/data_preparation/tmp/
-
-# Keep source documentation and small examples trackable.
+# Keep source documentation trackable.
 !README.md
 !DATA_AVAILABILITY.md
 !PUBLICATION_CHECKLIST.md
 !CITATION.cff
 !LICENSE
 !docs/**/*.md
-!pep71_case_study/README.md
-!masif-neosurf-runpro/**/*.md
-!masif-neosurf-runpro/**/*.bib
-!masif-neosurf-runpro/**/LICENSE
+!surface_preprocessing/**/*.md
+!surface_preprocessing/**/*.bib
+!surface_preprocessing/**/LICENSE

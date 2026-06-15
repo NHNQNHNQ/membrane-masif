@@ -6,9 +6,9 @@ final paper or GitHub release.
 
 ## Tracked in Git
 
-- Source code in `scripts/` and `pep71_case_study/`
-- Environment specifications in `env/`
-- Small example inputs bundled with `masif-neosurf-runpro/`
+- Source code in `scripts/`
+- Trimmed MaSIF surface-generation code in `surface_preprocessing/`
+- Environment specification in `env/`
 - Method notes and public documentation
 
 ## Not Tracked in Git
@@ -35,7 +35,6 @@ membrane-masif-data/
   generated_surfaces/
   scoring_tables/
   figure_source_data/
-  pep71_case_study/
   checksums.sha256
 ```
 
@@ -46,6 +45,5 @@ script, software environment, and expected checksums.
 
 - Manuscript DOI or preprint URL
 - Data archive DOI or release URL
-- License for top-level code and data
 - Exact accession links for any public database inputs
 - Checksums for the public data package

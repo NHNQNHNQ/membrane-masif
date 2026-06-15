@@ -25,9 +25,9 @@ SOFTWARE.
 This repository bundles third-party components under their own licenses, which
 take precedence for those files:
 
-- `masif-neosurf-runpro/` contains MaSIF / MaSIF-seed / Neosurf code and data,
-  released under their original licenses (Apache-2.0 for MaSIF). Their license
-  and citation requirements are retained in that subtree and must be preserved.
+- `surface_preprocessing/` contains MaSIF surface-generation code (Pablo Gainza
+  et al.), released under the Apache-2.0 license. Its license and citation
+  requirements are retained in that subtree and must be preserved.
 
 The MIT terms above apply to the original code authored for this project
-(top-level `scripts/`, `pep71_case_study/` scripts, and analysis utilities).
+(top-level `scripts/` and analysis utilities).
