@@ -148,3 +148,10 @@ surface_preprocessing/data_preparation/
 !surface_preprocessing/**/*.md
 !surface_preprocessing/**/*.bib
 !surface_preprocessing/**/LICENSE
+
+# Final backstop: never track macOS AppleDouble / .DS_Store files, even when a
+# whitelist above (e.g. **/*.md, **/*.bib) would otherwise re-include them.
+._*
+**/._*
+.DS_Store
+**/.DS_Store

@@ -1,16 +1,17 @@
-# membrane-masif analysis env (osx-arm64, Apple Silicon)
+# membrane-masif analysis environment (Apple Silicon / Linux, Python 3.11)
 #
-# Purpose: 分析用环境，覆盖三个目标
-#   (1) membrane-masif-4.1 PLY 加载、特征统计、ply_based_matcher_test 打分
-#   (2) Pepdiffusion-26.3.19 训练/采样 (PyTorch + PyG)
-#   (3) MD 轨迹分析: GROMACS gmx + MDAnalysis + mdtraj + LiPyphilic
+# Covers: PLY loading and surface scoring, peptide-diffusion sampling
+# (PyTorch + PyG), and MD-trajectory analysis (GROMACS / MDAnalysis / mdtraj /
+# LiPyphilic).
 #
-# 注：
-#   - 旧的 Linux x86_64 + Python 3.6 + TF1.x MaSIF 运行时不在此 env 重建，也不需要——
-#     descriptor-based MaSIF NN 路径不在分析需求里。
-#   - PLY 重生成 (MSMS+APBS+pdb2pqr+pymesh) 不放进来——tu/tu2 已有可用 PLY。
-#   - PyG 走 pip：conda-forge 的 pytorch_geometric 太旧 (2.0)，pyg channel 与
-#     conda-forge 混合解析常死循环。pip wheel 在 osx-arm64 上有一等公民支持。
+# Notes:
+#   - The legacy MaSIF descriptor neural network (Python 3.6 / TF1.x) is not
+#     rebuilt here and is not needed for these analyses.
+#   - Surface (re)generation via MSMS / APBS / pdb2pqr / PyMesh lives in
+#     surface_preprocessing/, not in this environment.
+#   - PyG is installed via pip: the conda-forge build lags behind and mixing the
+#     pyg channel with conda-forge often fails to solve; pip wheels are
+#     first-class on osx-arm64.
 name: membrane-masif
 channels:
   - conda-forge

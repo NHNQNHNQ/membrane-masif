@@ -1,12 +1,11 @@
+# Dependencies for the molecular-surface (PLY-only) generation path.
+#
+# External binaries (installed separately; export their paths — see ../README.md):
+#   reduce, MSMS, pdb2pqr, multivalue, APBS
+#
+# Python packages:
 Python
-PyMesh
-reduce
-MSMS
+numpy
+scipy
 biopython
-pdb2pqr
-multivalue
-APBS
-open3D
-Pymol
-Tensorflow
-colour
+PyMesh

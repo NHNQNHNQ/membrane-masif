@@ -28,7 +28,6 @@ This is one of two code repositories for the accompanying manuscript:
 - `env/`: conda environment file for the analysis environment.
 - `surface_preprocessing/`: trimmed MaSIF surface-generation code (Apache-2.0)
   that turns a structure into a PLY molecular surface.
-- `docs/`: method notes and implementation plans retained for transparency.
 
 Generated outputs should be written to `result/`, `workdir/`, or another path
 outside the Git-tracked source tree.
