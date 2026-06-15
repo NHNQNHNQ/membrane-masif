@@ -1,18 +1,65 @@
 cff-version: 1.2.0
-message: "If you use Membrane-MaSIF, please cite the accompanying manuscript and this software release."
+message: "If you use this software, please cite the accompanying manuscript (see preferred-citation) and this software release."
 title: "Membrane-MaSIF"
 type: software
 authors:
-  - family-names: "TBD"
-    given-names: "TBD"
+  - family-names: "Ma"
+    given-names: "Zhenyu"
+  - family-names: "Tian"
+    given-names: "Sixin"
+  - family-names: "Sheng"
+    given-names: "Mengmeng"
+  - family-names: "Cheng"
+    given-names: "Hong"
+  - family-names: "Zhu"
+    given-names: "Jingyi"
+  - family-names: "Yang"
+    given-names: "Chunyi"
+  - family-names: "Xu"
+    given-names: "Limei"
+  - family-names: "Xiao"
+    given-names: "Min"
+  - family-names: "Li"
+    given-names: "Jian"
+  - family-names: "Li"
+    given-names: "Yanyan"
+  - family-names: "Jiang"
+    given-names: "Xukai"
 repository-code: "https://github.com/NHNQNHNQ/membrane-masif"
-abstract: "Workflow for membrane and peptide molecular surface generation, feature reconstruction, and membrane-peptide surface matching analysis."
+abstract: "Workflow for membrane and peptide molecular surface generation, feature reconstruction, and membrane-peptide surface complementarity scoring."
 license: "MIT"
 version: "0.1.0"
-date-released: "2026-06-05"
+date-released: "2026-06-15"
 keywords:
   - antimicrobial peptides
   - membrane surface
-  - MaSIF
-  - molecular surface
+  - molecular surface fingerprinting
   - peptide design
+preferred-citation:
+  type: article
+  title: "Mechanism-guided antimicrobial peptide design through membrane-surface fingerprinting and graph diffusion"
+  year: 2026
+  notes: "Zhenyu Ma, Sixin Tian and Mengmeng Sheng contributed equally. Corresponding authors: Yanyan Li and Xukai Jiang."
+  authors:
+    - family-names: "Ma"
+      given-names: "Zhenyu"
+    - family-names: "Tian"
+      given-names: "Sixin"
+    - family-names: "Sheng"
+      given-names: "Mengmeng"
+    - family-names: "Cheng"
+      given-names: "Hong"
+    - family-names: "Zhu"
+      given-names: "Jingyi"
+    - family-names: "Yang"
+      given-names: "Chunyi"
+    - family-names: "Xu"
+      given-names: "Limei"
+    - family-names: "Xiao"
+      given-names: "Min"
+    - family-names: "Li"
+      given-names: "Jian"
+    - family-names: "Li"
+      given-names: "Yanyan"
+    - family-names: "Jiang"
+      given-names: "Xukai"

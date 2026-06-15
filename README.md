@@ -37,21 +37,20 @@ outside the Git-tracked source tree.
 
 ## Installation
 
-Two environments are provided because the original MaSIF preprocessing stack and
-the downstream analysis stack have different platform requirements.
+One conda environment covers all analysis; surface generation additionally needs
+a few standard external binaries.
 
-### Linux preprocessing environment
+### Surface-generation dependencies
 
-Use this environment when regenerating MaSIF-style molecular surfaces with
-MSMS/APBS/pdb2pqr/pymesh:
+`scripts/run_preprocess_ligand_only.sh` turns a cleaned PDB/MOL2 into a PLY
+surface using the following external binaries. Install them and export their
+paths before running surface generation (pre-generated PLY surfaces are also
+available in the data archive — see [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md)
+— so most users can skip this step):
 
-```bash
-mamba env create -f env/membrane-masif.yml
-mamba activate membrane-masif
-```
-
-The following external binaries must be installed separately and exported before
-running surface generation:
+- **MSMS** — molecular-surface triangulation
+- **pdb2pqr** — protonation and PQR charge assignment
+- **APBS** — Poisson–Boltzmann electrostatics (provides the `multivalue` tool)
 
 ```bash
 export MSMS_BIN=/path/to/msms
@@ -62,8 +61,12 @@ export MULTIVALUE_BIN=/path/to/multivalue
 
 ### Analysis environment
 
-Use this environment for PLY loading, scoring, plotting, Pepdiffusion outputs,
-and MD trajectory analysis:
+The conda environment in `env/membrane-masif-analysis.yml` (Python 3.11) provides
+PLY loading and scoring, figure generation, peptide-diffusion sampling
+(PyTorch + PyG), and MD-trajectory analysis (GROMACS / MDAnalysis / mdtraj /
+LiPyphilic), plus `numpy`/`scipy`/`pandas`/`scikit-learn`/`networkx`,
+`matplotlib`/`seaborn`, `rdkit`/`openbabel`/`biopython`, and
+`trimesh`/`plyfile`/`meshio`:
 
 ```bash
 mamba env create -f env/membrane-masif-analysis.yml
@@ -131,11 +134,12 @@ bash scripts/run_full_pipeline.sh \
 
 ## Reproducibility Notes
 
-- The Linux preprocessing stack follows the legacy MaSIF dependency chain and is
-  most reproducible on Linux x86_64.
-- The analysis environment is intended for modern Python-based scoring and
-  plotting tasks. It does not replace the original MSMS/APBS/pymesh surface
-  generation stack.
+- Surface generation depends on the external MSMS / pdb2pqr / APBS binaries
+  listed under Installation; install them separately and export their paths, or
+  use the pre-generated PLY surfaces from the data archive.
+- The analysis environment is a modern Python 3.11 conda stack (built and tested
+  on Apple Silicon) for scoring, plotting, peptide-diffusion sampling, and
+  MD-trajectory analysis.
 - Scripts that generate manuscript figures may require data files described in
   `DATA_AVAILABILITY.md`.
 - Large generated artifacts are excluded by `.gitignore`; archive them in a data
