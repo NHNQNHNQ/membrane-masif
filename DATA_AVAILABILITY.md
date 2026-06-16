@@ -24,26 +24,18 @@ The following artifacts are intentionally excluded by `.gitignore`:
   document files
 - Local absolute-path datasets used during development
 
-## Recommended Public Release Layout
+## Data Archive
 
-Use a separate DOI-backed archive or GitHub release assets with this structure:
+The molecular dynamics trajectories (four LL-37 / *A. baumannii* outer-membrane
+systems, 200 ns production each) and the mode-specific membrane PLY surfaces
+(control / bind / insert / pore) are deposited at Zenodo:
 
-```text
-membrane-masif-data/
-  README.md
-  input_structures/
-  generated_surfaces/
-  scoring_tables/
-  figure_source_data/
-  checksums.sha256
-```
+**https://doi.org/10.5281/zenodo.20709918**
 
-Each folder should include a short README describing provenance, generation
-script, software environment, and expected checksums.
+Per-peptide and per-candidate PLY surface collections and membrane-matching
+score tables are not deposited; they are regenerable with this pipeline from the
+input structures and the deposited membrane surfaces.
 
-## Items To Fill Before Public Release
+## Still To Fill (on manuscript publication)
 
 - Manuscript DOI or preprint URL
-- Data archive DOI or release URL
-- Exact accession links for any public database inputs
-- Checksums for the public data package
